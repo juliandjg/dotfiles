@@ -14,10 +14,10 @@ source ~/.dotfiles/.aliases
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# pnpm
-export PNPM_HOME="/home/julian/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# fnm
+export PATH="/home/julian/.local/share/fnm:$PATH"
+eval "`fnm env`"
+# fnm end
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
