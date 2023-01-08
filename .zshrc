@@ -1,12 +1,23 @@
-# ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
+plugins=(git zoxide docker-compose)
+
+# Reload theme
+source $ZSH/oh-my-zsh.sh
+
+# Load plugins
+source /usr/share/zgen/zgen.zsh
+zgen load zsh-users/zsh-syntax-highlighting
+zgen load zsh-users/zsh-autosuggestions
+zgen load zsh-users/zsh-completions
+
+source $ZSH/.aliases
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git zoxide docker-compose zsh-syntax-highlighting zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
-source $ZSH/.aliases
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
