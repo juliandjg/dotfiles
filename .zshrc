@@ -15,6 +15,7 @@ source /usr/share/zgen/zgen.zsh
 zgen load zsh-users/zsh-syntax-highlighting
 zgen load zsh-users/zsh-autosuggestions
 zgen load zsh-users/zsh-completions
+zgen load marlonrichert/zsh-autocomplete
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
