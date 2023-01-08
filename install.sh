@@ -10,9 +10,12 @@ sudo apt-get install -y \
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
-# zshrc
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
+# Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cat $HOME/.dotfiles/.zshrc > ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 
 # Starship
 curl -sS https://starship.rs/install.sh | sh
