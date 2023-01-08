@@ -1,2 +1,5 @@
 alias ll="exa -l -g --icons"
 alias llt="exa -1 --icons --tree"
+alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias cls="clear"
+alias tree="exa --icons --tree -L 1 -I node_modules"
