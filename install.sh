@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt update -y && sudo apt full--upgrade -y
+sudo apt update -y && sudo apt full-upgrade -y
 
 sudo apt install -y \
     zsh zoxide exa unzip zip bat \
