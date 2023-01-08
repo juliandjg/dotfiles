@@ -43,6 +43,6 @@ echo \
 sudo apt-get update -y && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 # Change to ZSH
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 zsh
