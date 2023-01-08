@@ -17,5 +17,10 @@ export PATH="/home/$USER/.local/share/fnm:$PATH"
 eval "`fnm env`"
 # fnm end
 
+# pnpm
+export PNPM_HOME="/home/julian/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
