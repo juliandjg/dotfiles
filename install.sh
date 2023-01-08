@@ -2,13 +2,9 @@
 
 sudo apt update -y && sudo apt full-upgrade -y
 
-sudo apt install -y \
+sudo apt-get install -y \
     zsh zoxide exa unzip zip bat \
-    ca-certificates curl gnupg lsb_release \
-
-
-
-
+    ca-certificates curl gnupg lsb-release
 
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
@@ -33,7 +29,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 sudo apt autoremove -y
 
