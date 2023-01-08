@@ -10,10 +10,8 @@ sudo apt-get install -y \
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
-# Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# zshrc
 cat $HOME/.dotfiles/.zshrc > ~/.zshrc
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.oh-my-zsh/zsh-snap
 
 # Starship
 curl -sS https://starship.rs/install.sh | sh
