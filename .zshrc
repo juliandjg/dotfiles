@@ -1,3 +1,7 @@
+[[ -f ~/.zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
+
 ZSH_THEME="agnoster"
 plugins=(git zoxide docker-compose)
 
@@ -11,14 +15,14 @@ source $ZSH/.aliases
 
 
 # Load plugins
-source /usr/share/zgen/zgen.zsh
-zgen load zsh-users/zsh-syntax-highlighting
-zgen load zsh-users/zsh-autosuggestions
-zgen load zsh-users/zsh-completions
-zgen load marlonrichert/zsh-autocomplete
+source ~/.zsh-snap/znap.zsh
+znap  source  zsh-users/zsh-syntax-highlighting
+znap  source  zsh-users/zsh-autosuggestions
+znap  source  zsh-users/zsh-completions
+znap  source  marlonrichert/zsh-autocomplete
 
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+znap eval "$(zoxide init zsh)"
+znap eval "$(starship init zsh)"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
