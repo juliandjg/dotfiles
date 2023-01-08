@@ -4,15 +4,15 @@ sudo apt-get update -y && sudo apt-get full-upgrade -y
 
 sudo apt-get install -y \
     zsh zoxide exa unzip zip bat \
-    ca-certificates curl gnupg lsb-release \
-    znap
+    ca-certificates curl gnupg lsb-release
 
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # Oh-my-zsh
-cat $HOME/.dotfiles/.zshrc > ~/.zshrc
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+cat $HOME/.dotfiles/.zshrc > ~/.zshrc
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Starship
