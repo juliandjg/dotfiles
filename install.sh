@@ -4,7 +4,7 @@ sudo apt-get update -y
 sudo apt-get full-upgrade -y
 
 sudo apt-get install -y \
-    zsh zoxide exa unzip zip bat zgen \
+    zsh zoxide exa unzip zip bat \
     ca-certificates curl gnupg lsb-release
 
 # Fix batcat -> bat
