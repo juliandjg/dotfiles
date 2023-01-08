@@ -1,11 +1,10 @@
-source ~/.oh-my-zsh/zsh-snap/install.zsh
+source ~/.zsh-snap/install.zsh
 
 znap eval starship 'starship init zsh --print-full-init'
 znap prompt
 
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="$HOME/.oh-my-zsh"
 
 znap eval zeoxide'zoxide init zsh'
 
