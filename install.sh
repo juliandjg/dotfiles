@@ -13,6 +13,7 @@ sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cat $HOME/.dotfiles/.zshrc > ~/.zshrc
+cat $HOME/.dotfiles/.aliases > ~/.oh-my-zsh/.aliases
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
