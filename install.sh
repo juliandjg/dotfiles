@@ -11,6 +11,7 @@ sudo apt-get install -y \
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # zshrc
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
 cat $HOME/.dotfiles/.zshrc > ~/.zshrc
 
 # Starship
