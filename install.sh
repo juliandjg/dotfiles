@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo apt-get update -y && sudo apt-get full-upgrade -y
+sudo apt-get update -y
+sudo apt-get full-upgrade -y
 
 sudo apt-get install -y \
     zsh zoxide exa unzip zip bat \
@@ -12,9 +13,7 @@ sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cat $HOME/.dotfiles/.zshrc > ~/.zshrc
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
-source zsh-snap/install.zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.oh-my-zsh/zsh-snap
 
 # Starship
 curl -sS https://starship.rs/install.sh | sh
@@ -37,8 +36,6 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update -y && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-
-sudo apt autoremove -y
 
 # Change to ZSH
 sudo chsh -s /usr/bin/zsh
