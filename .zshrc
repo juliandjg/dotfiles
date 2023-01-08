@@ -24,3 +24,5 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
