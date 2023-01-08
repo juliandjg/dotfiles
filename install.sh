@@ -18,7 +18,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTO
 
 # Fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
- yes | ~/.fzf/install
+yes | ~/.fzf/install
 
 
 # Starship
