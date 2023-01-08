@@ -13,7 +13,6 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH/.aliases
 
-
 # Load plugins
 source ~/.zsh-snap/znap.zsh
 znap  source  zsh-users/zsh-syntax-highlighting
@@ -21,9 +20,8 @@ znap  source  zsh-users/zsh-autosuggestions
 znap  source  zsh-users/zsh-completions
 znap  source  marlonrichert/zsh-autocomplete
 
-znap eval "$(zoxide init zsh)"
-znap eval "$(starship init zsh)"
-
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
