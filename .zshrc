@@ -8,16 +8,11 @@ eval "$(starship init zsh)"
 source ~/.oh-my-zsh/plugins/zsh-snap/znap.zsh
 znap source marlonrichert/zsh-autocomplete
 
-alias ll="exa -l -g --icons"
-alias llt="exa -1 --icons --tree"
+source ~/.dotfiles/.aliases
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
 export PNPM_HOME="/home/julian/.local/share/pnpm"
