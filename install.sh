@@ -27,6 +27,9 @@ curl -s "https://get.sdkman.io" | bash
 # FNM - node manager
 curl -fsSL https://fnm.vercel.app/install | bash
 
+# PNPM
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 #Docker
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
