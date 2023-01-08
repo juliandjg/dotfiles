@@ -1,21 +1,28 @@
-# ZSH_THEME="agnoster"
+source ~/.oh-my-zsh/zsh-snap/install.zsh
+
+znap eval starship 'starship init zsh --print-full-init'
+znap prompt
+
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git zoxide docker-compose zsh-syntax-highlighting zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-source ~/.oh-my-zsh/plugins/zsh-snap/znap.zsh
-znap source marlonrichert/zsh-autocomplete
 
-source ~/.dotfiles/.aliases
+znap eval zeoxide'zoxide init zsh'
+
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/git
+znap source zsh-users/zeoxide
+znap source zsh-users/docker-compose
+znap source zsh-users/zsh-syntax-highlighting
+
+znap source ~/.dotfiles/.aliases
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # fnm
-export PATH="/home/julian/.local/share/fnm:$PATH"
+export PATH="/home/$USER/.local/share/fnm:$PATH"
 eval "`fnm env`"
 # fnm end
 
