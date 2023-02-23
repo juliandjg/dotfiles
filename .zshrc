@@ -17,11 +17,14 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source marlonrichert/zsh-autocomplete
-znap source ajeetdsouza/zoxide
+
+# zoxide
+znap eval zoxide "zoxide init zsh"
+# zoxide end
 
 # fnm
 export PATH="/home/$USER/.local/share/fnm:$PATH"
-znap eval fnm "$(fnm env)"
+znap eval fnm "fnm env"
 # fnm end
 
 # pnpm
