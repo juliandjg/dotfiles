@@ -44,6 +44,6 @@ sudo apt-get update -y && sudo apt-get install docker-ce docker-ce-cli container
 sudo usermod -aG docker $USER
 
 # Change to ZSH
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 zsh
