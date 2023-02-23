@@ -7,7 +7,7 @@ sudo apt-get install -y language-pack-en
 sudo update-locale
 
 sudo apt-get install -y \
-  zsh exa unzip zip bat \
+  zsh zoxide exa unzip zip bat \
   ca-certificates curl gnupg lsb-release
 
 # Fix batcat -> bat
