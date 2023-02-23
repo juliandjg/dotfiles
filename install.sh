@@ -45,6 +45,6 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 # Change to ZSH
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 
 zsh
