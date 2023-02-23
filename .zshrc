@@ -10,17 +10,18 @@ znap prompt
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.dotfiles"
 
-znap source $ZSH/.aliases
+source $ZSH/.aliases
 
 # Load plugins
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source marlonrichert/zsh-autocomplete
+znap source ajeetdsouza/zoxide
 
 # fnm
 export PATH="/home/$USER/.local/share/fnm:$PATH"
-znap eval "$(fnm env)"
+znap eval fnm "$(fnm env)"
 # fnm end
 
 # pnpm
