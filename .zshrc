@@ -4,6 +4,9 @@
 
 source ~/.zsh-snap/znap.zsh
 
+znap eval starship 'starship init zsh --print-full-init'
+znap prompt
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.dotfiles"
 
