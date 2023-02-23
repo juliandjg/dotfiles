@@ -14,16 +14,14 @@ sudo apt-get install -y \
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cat $HOME/.dotfiles/.zshrc >~/.zshrc
-cat $HOME/.dotfiles/.aliases >~/.oh-my-zsh/.aliases
 
 # Fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
 
 # Starship
-curl -sS https://starship.rs/install.sh | sh
+# curl -sS https://starship.rs/install.sh | sh
 mkdir -p ~/.config
 cat $HOME/.dotfiles/starship.toml >~/.config/starship.toml
 

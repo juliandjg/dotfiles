@@ -2,30 +2,22 @@
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
 
-ZSH_THEME="agnoster"
-plugins=(git zoxide docker-compose)
+source ~/.zsh-snap/znap.zsh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.dotfiles"
 
-# Reload theme
-source $ZSH/oh-my-zsh.sh
-
-source $ZSH/.aliases
+znap source $ZSH/.aliases
 
 # Load plugins
-source ~/.zsh-snap/znap.zsh
-znap  source  zsh-users/zsh-syntax-highlighting
-znap  source  zsh-users/zsh-autosuggestions
-znap  source  zsh-users/zsh-completions
-znap  source  marlonrichert/zsh-autocomplete
-
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+znap source zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-completions
+znap source marlonrichert/zsh-autocomplete
 
 # fnm
 export PATH="/home/$USER/.local/share/fnm:$PATH"
-eval "`fnm env`"
+znap eval "$(fnm env)"
 # fnm end
 
 # pnpm
@@ -36,10 +28,10 @@ export PATH="$PNPM_HOME:$PATH"
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+if grep -q "microsoft" /proc/version >/dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
         wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
-            --exec /usr/sbin/service docker start > /dev/null 2>&1
+            --exec /usr/sbin/service docker start >/dev/null 2>&1
     fi
 fi
 
