@@ -33,13 +33,26 @@
             "keys": "ctrl+shift+w"
         },
         {
+            "command": "unbound",
+            "keys": "win+sc(41)"
+        },
+        {
             "command": "closePane",
             "keys": "alt+shift+w"
+        },
+        {
+            "command": 
+            {
+                "action": "quakeMode"
+            },
+            "keys": "win+ctrl+shift+q"
         }
     ],
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+    "experimental.rendering.forceFullRepaint": false,
+    "experimental.rendering.software": true,
     "profiles": 
     {
         "defaults": 
@@ -48,7 +61,8 @@
             "font": 
             {
                 "face": "Cousine NF"
-            }
+            },
+            "useAtlasEngine": true
         },
         "list": 
         [
@@ -71,6 +85,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
+                "elevate": false,
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": true,
                 "name": "Ubuntu",
@@ -359,5 +374,7 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ]
+    ],
+    "themes": [],
+    "windowingBehavior": "useAnyExisting"
 }
