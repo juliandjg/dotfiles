@@ -2,6 +2,7 @@
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
 
+zstyle ':znap:*' repos-dir ~/.zsh-snap/repos
 source ~/.zsh-snap/znap.zsh
 
 znap eval starship 'starship init zsh --print-full-init'
