@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -20,8 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -41,8 +38,7 @@
             "keys": "alt+shift+w"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "quakeMode"
             },
             "keys": "win+ctrl+shift+q"
@@ -53,19 +49,15 @@
     "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
     "experimental.rendering.forceFullRepaint": false,
     "experimental.rendering.software": true,
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "colorScheme": "Argonaut",
-            "font": 
-            {
+            "font": {
                 "face": "Cousine NF"
             },
             "useAtlasEngine": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -119,8 +111,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0E1019",
             "black": "#232323",
