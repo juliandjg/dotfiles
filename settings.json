@@ -45,10 +45,8 @@
         }
     ],
     "copyFormatting": "none",
-    "copyOnSelect": true,
+    "copyOnSelect": false,
     "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-    "experimental.rendering.forceFullRepaint": false,
-    "experimental.rendering.software": true,
     "profiles": {
         "defaults": {
             "colorScheme": "Argonaut",
