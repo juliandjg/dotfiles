@@ -42,11 +42,6 @@ curl -s "https://get.sdkman.io" | bash
 
 # FNM - node manager
 curl -fsSL https://fnm.vercel.app/install | bash
-eval "$(fnm env)"
-git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap 
-mkdir -p ~/.zsh-snap/repos/zsh-completions/src
-cat $HOME/.dotfiles/_fnm >~/.zsh-snap/repos/zsh-completions/src/_fnm
 
 # PNPM
 curl -fsSL https://get.pnpm.io/install.sh | sh -
