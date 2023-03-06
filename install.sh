@@ -42,8 +42,6 @@ curl -s "https://get.sdkman.io" | bash
 
 # FNM - node manager
 curl -fsSL https://fnm.vercel.app/install | bash
-mkdir -p ~/.zsh-snap/repos/zsh-completions/src
-fnm completions --shell zsh > ~/.zsh-snap/repos/zsh-completions/src/_fnm
 
 # PNPM
 curl -fsSL https://get.pnpm.io/install.sh | sh -
