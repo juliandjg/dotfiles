@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce -y
 
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
