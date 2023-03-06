@@ -46,7 +46,7 @@ eval "$(fnm env)"
 git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap 
 mkdir -p ~/.zsh-snap/repos/zsh-completions/src
-fnm completions --shell zsh > ~/.zsh-snap/repos/zsh-completions/src/_fnm
+cat $HOME/.dotfiles/_fnm >~/.zsh-snap/repos/zsh-completions/src/_fnm
 
 # PNPM
 curl -fsSL https://get.pnpm.io/install.sh | sh -
