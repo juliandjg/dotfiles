@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo add-apt-repository ppa:serge-rider/dbeaver-ce -y
-
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
 
@@ -10,8 +8,7 @@ sudo update-locale
 
 sudo apt-get install -y \
   zsh zoxide exa unzip zip bat \
-  ca-certificates curl gnupg lsb-release \
-  dbeaver-ce
+  ca-certificates curl gnupg lsb-release 
 
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
