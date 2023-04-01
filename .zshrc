@@ -11,6 +11,10 @@ znap prompt
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.dotfiles"
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+
 source $ZSH/.aliases
 
 # Load plugins
