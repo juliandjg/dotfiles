@@ -33,7 +33,7 @@ znap eval fnm "fnm env"
 # fnm end
 
 # pnpm
-export PNPM_HOME="/home/julian/.local/share/pnpm"
+export PNPM_HOME="/home/$USER/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
