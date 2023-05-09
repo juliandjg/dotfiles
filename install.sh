@@ -13,8 +13,8 @@ sudo apt-get install -y \
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
-# Oh-my-zsh
-cat $HOME/.dotfiles/.zshrc >~/.zshrc
+# Settings ZSH
+cat $HOME/$PWD/.zshrc >~/.zshrc
 
 # LazyDocker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
@@ -32,7 +32,7 @@ yes | ~/.fzf/install
 # Starship
 curl -sS https://starship.rs/install.sh | sh
 mkdir -p ~/.config
-cat $HOME/.dotfiles/starship.toml >~/.config/starship.toml
+cat $HOME/$PWD/starship.toml >~/.config/starship.toml
 
 # SDKMan
 curl -s "https://get.sdkman.io" | bash
