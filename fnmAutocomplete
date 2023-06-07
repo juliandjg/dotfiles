@@ -1,1 +1,1 @@
-fnm completions --shell zsh >~/.zsh-snap/repos/zsh-completions/src/_fnm
+fnm completions --shell zsh >~/.zsh-snap/repos/zsh-users/zsh-completions/src/_fnm
