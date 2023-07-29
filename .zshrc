@@ -15,7 +15,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=12000
 export SAVEHIST=10000
 
-source $ZSH/.aliases
+source ~/.aliases
 
 # Load plugins
 znap source zsh-users/zsh-syntax-highlighting

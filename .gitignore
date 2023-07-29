@@ -1,1 +1,6 @@
 .history/**
+Cousine/**
+.vscode/**
+*.tar.gz
+*.tar
+lazygit
