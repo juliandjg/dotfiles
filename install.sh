@@ -36,7 +36,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
 
 # Starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 mkdir -p ~/.config
 cat $HOME/.dotfiles/starship.toml >~/.config/starship.toml
 
