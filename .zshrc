@@ -14,8 +14,9 @@ export ZSH="$HOME/.dotfiles"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=12000
 export SAVEHIST=10000
+setopt SHARE_HISTORY
 
-source ~/.aliases
+source $ZSH/.aliases
 
 # Load plugins
 znap source zsh-users/zsh-syntax-highlighting
@@ -38,7 +39,10 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # Load Angular CLI autocompletion.
-# source <(ng completion script)
+#source <(ng completion script)
+
+# Load Docker CLI autocompletion.
+source <(docker completion zsh)
 
 if grep -q "microsoft" /proc/version >/dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
