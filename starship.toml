@@ -37,6 +37,7 @@ symbol = " "
 
 [java]
 symbol = " "
+style = "fg:#ff0000"
 format = 'via [$symbol]($style)'
 
 [julia]
