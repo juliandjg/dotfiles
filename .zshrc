@@ -58,7 +58,8 @@ znap eval zoxide "zoxide init zsh"
 
 # fnm
 export PATH="/home/$USER/.local/share/fnm:$PATH"
-znap eval fnm "fnm env"
+znap eval fnm_env "fnm env"
+znap eval fnm_completions "fnm completions --shell zsh"
 # fnm end
 
 # pnpm
