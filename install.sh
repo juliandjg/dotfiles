@@ -14,10 +14,10 @@ sudo apt-get install -y \
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # Settings ZSH
-cat $HOME/.dotfiles/.zshrc >~/.zshrc
+ln $HOME/.dotfiles/.zshrc ~/.zshrc
 
 # Settings aliases
-cat $HOME/.dotfiles/.aliases >~/.aliases
+ln $HOME/.dotfiles/.aliases ~/.aliases
 
 # LazyDocker
 LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
