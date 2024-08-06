@@ -3,6 +3,26 @@
         https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
 
 zstyle ':znap:*' repos-dir ~/.zsh-snap/repos
+zstyle ':znap:*:*' git-maintenance off
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# preview directory's content with eza when completing z
+zstyle ':fzf-tab:complete:zoxide:*' fzf-preview 'exa -1 --color=always $realpath'
+# preview directory's content with eza when completing z
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+
 source ~/.zsh-snap/znap.zsh
 
 znap eval starship 'starship init zsh --print-full-init'
@@ -14,7 +34,13 @@ export ZSH="$HOME/.dotfiles"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=12000
 export SAVEHIST=10000
-setopt SHARE_HISTORY
+setopt sharehistory
+setopt appendhistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 source $ZSH/.aliases
 
@@ -23,6 +49,8 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source marlonrichert/zsh-autocomplete
+znap source Aloxaf/fzf-tab
+
 
 # zoxide
 znap eval zoxide "zoxide init zsh"
