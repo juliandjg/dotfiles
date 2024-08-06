@@ -7,9 +7,6 @@ zstyle ':znap:*:*' git-maintenance off
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-# NOTE: don't use escape sequences here, fzf-tab will ignore them
-zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
@@ -22,6 +19,7 @@ zstyle ':fzf-tab:complete:zoxide:*' fzf-preview 'exa -1 --color=always $realpath
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 source ~/.zsh-snap/znap.zsh
 
