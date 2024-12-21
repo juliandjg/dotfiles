@@ -7,6 +7,8 @@ zstyle ':znap:*:*' git-maintenance off
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
+# disable sort when completing `git reset`
+zstyle ':completion:*:git-reset:*' sort false
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
