@@ -13,14 +13,12 @@ zstyle ':completion:*:git-reset:*' sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-# preview directory's content with eza when completing z
-zstyle ':fzf-tab:complete:zoxide:*' fzf-preview 'exa -1 --color=always $realpath'
-# preview directory's content with eza when completing z
-zstyle ':fzf-tab:complete:z:*' fzf-preview 'exa -1 --color=always $realpath'
+# fzf-tab-complete
+zstyle ':fzf-tab:complete:*' fzf-preview 'bat --style=plain --color=always $realpath'
+zstyle ':fzf-tab:complete:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' fzf-min-height 60
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 source ~/.zsh-snap/znap.zsh
@@ -29,7 +27,6 @@ znap eval starship 'starship init zsh --print-full-init'
 znap prompt
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="$HOME/.dotfiles"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=12000
@@ -42,7 +39,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-source $ZSH/.aliases
+source ~/.aliases
 
 # Load plugins
 znap source zsh-users/zsh-syntax-highlighting
@@ -57,9 +54,9 @@ znap eval zoxide "zoxide init zsh"
 # zoxide end
 
 # fnm
-export PATH="/home/$USER/.local/share/fnm:$PATH"
-znap eval fnm_env "fnm env"
-znap eval fnm_completions "fnm completions --shell zsh"
+export PATH="/home/julian/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm completions --shell zsh)"
 # fnm end
 
 # pnpm
