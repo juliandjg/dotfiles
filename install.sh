@@ -8,7 +8,8 @@ sudo update-locale
 
 sudo apt-get install -y \
   zsh zoxide eza unzip zip bat \
-  ca-certificates curl gnupg lsb-release
+  ca-certificates curl gnupg lsb-release \
+  git-delta
 
 # Fix batcat -> bat
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
