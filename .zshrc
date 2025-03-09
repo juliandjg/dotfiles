@@ -17,7 +17,7 @@ zstyle ':completion:*' menu no
 # Set fzf-preview for specific commands first
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
 zstyle ':fzf-tab:complete:z:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
-zstyle ':fzf-tab:complete:zeoxide:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
+zstyle ':fzf-tab:complete:zoxide:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
 zstyle ':fzf-tab:complete:cat:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
 zstyle ':fzf-tab:complete:bat:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
 zstyle ':fzf-tab:complete:nano:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
