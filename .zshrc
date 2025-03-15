@@ -33,7 +33,7 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview 'git show --color=always $
 zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word'
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 # Set fzf-preview for all other completions
-zstyle ':fzf-tab:complete:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || bat --style=plain --color=always "$realpath"'
+zstyle ':fzf-tab:complete:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || [ -f "$realpath" ] && bat --style=plain --color=always "$realpath"'
 
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
@@ -67,19 +67,18 @@ znap source zsh-users/zsh-completions
 # znap source marlonrichert/zsh-autocomplete
 znap source Aloxaf/fzf-tab
 
-
 # zoxide
 znap eval zoxide "zoxide init zsh"
 # zoxide end
 
 # fnm
-export PATH="/home/julian/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(fnm completions --shell zsh)"
 # fnm end
 
 # pnpm
-export PNPM_HOME="/home/$USER/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
@@ -97,6 +96,14 @@ if grep -q "microsoft" /proc/version >/dev/null 2>&1; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# asdf
+mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+source ~/.asdf/plugins/golang/set-env.zsh
+# asdf end
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

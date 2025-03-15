@@ -30,7 +30,17 @@ sudo mv lazydocker /usr/local/bin
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
+sudo mv lazygit /usr/local/bin
+
+# Asdf
+ASDF_VERSION=$(curl -s "https://api.github.com/repos/asdf-vm/asdf/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo asdf.tar.gz "https://github.com//asdf-vm/asdf/releases/latest/download/asdf-v${ASDF_VERSION}-linux-amd64.tar.gz"
+tar xf asdf.tar.gz asdf
+sudo mv asdf /usr/local/bin
+
+# Asdf plugins
+asdf plugin add nodejs
+asdf plugin add golang
 
 # Fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -50,7 +60,7 @@ curl -fsSL https://fnm.vercel.app/install | bash
 # PNPM
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-#Docker
+# Docker
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
