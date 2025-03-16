@@ -25,7 +25,7 @@ mkdir -p "$ZSH_ADDONS_DIR"
 clone_if_not_exists "https://github.com/zsh-users/zsh-syntax-highlighting.git" "$ZSH_ADDONS_DIR/zsh-syntax-highlighting"
 clone_if_not_exists "https://github.com/zsh-users/zsh-autosuggestions.git" "$ZSH_ADDONS_DIR/zsh-autosuggestions"
 clone_if_not_exists "https://github.com/zsh-users/zsh-completions.git" "$ZSH_ADDONS_DIR/zsh-completions"
-# clone_if_not_exists "https://github.com/marlonrichert/zsh-autocomplete.git" "$ZSH_ADDONS_DIR/marlonrichert/zsh-autocomplete"
+# clone_if_not_exists "https://github.com/marlonrichert/zsh-autocomplete.git" "$ZSH_ADDONS_DIR/zsh-autocomplete"
 clone_if_not_exists "https://github.com/Aloxaf/fzf-tab.git" "$ZSH_ADDONS_DIR/fzf-tab"
 # end plugins
 
@@ -33,6 +33,7 @@ clone_if_not_exists "https://github.com/Aloxaf/fzf-tab.git" "$ZSH_ADDONS_DIR/fzf
 source "$ZSH_ADDONS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$ZSH_ADDONS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZSH_ADDONS_DIR/zsh-completions/zsh-completions.plugin.zsh"
+# source "$ZSH_ADDONS_DIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$ZSH_ADDONS_DIR/fzf-tab/fzf-tab.zsh"
 # source plugins end
 
