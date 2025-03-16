@@ -1,11 +1,42 @@
-[[ -f ~/.zsh-snap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
+ZSH_ADDONS_DIR="$HOME/.zsh-addons"
 
-zstyle ':znap:*' repos-dir ~/.zsh-snap/repos
-zstyle ':znap:*:*' git-maintenance off
+clone_if_not_exists() {
+    local repo_url=$1
+    local dest_dir=$2
+    if [ ! -d "$dest_dir" ]; then
+        git clone --depth 1 "$repo_url" "$dest_dir"
+    fi
+}
 
-# Set fzf-tab & completion style
+update_repos() {
+    echo "Updating all repositories in $ZSH_ADDONS_DIR..."
+    for repo in "$ZSH_ADDONS_DIR"/*; do
+        if [ -d "$repo/.git" ]; then
+            echo "Updating $repo..."
+            (cd "$repo" && git pull --rebase --autostash)
+        fi
+    done
+    echo "All repositories updated."
+}
+
+mkdir -p "$ZSH_ADDONS_DIR"
+
+# plugins
+clone_if_not_exists "https://github.com/zsh-users/zsh-syntax-highlighting.git" "$ZSH_ADDONS_DIR/zsh-syntax-highlighting"
+clone_if_not_exists "https://github.com/zsh-users/zsh-autosuggestions.git" "$ZSH_ADDONS_DIR/zsh-autosuggestions"
+clone_if_not_exists "https://github.com/zsh-users/zsh-completions.git" "$ZSH_ADDONS_DIR/zsh-completions"
+# clone_if_not_exists "https://github.com/marlonrichert/zsh-autocomplete.git" "$ZSH_ADDONS_DIR/marlonrichert/zsh-autocomplete"
+clone_if_not_exists "https://github.com/Aloxaf/fzf-tab.git" "$ZSH_ADDONS_DIR/fzf-tab"
+# end plugins
+
+# source plugins
+source "$ZSH_ADDONS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$ZSH_ADDONS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZSH_ADDONS_DIR/zsh-completions/zsh-completions.plugin.zsh"
+source "$ZSH_ADDONS_DIR/fzf-tab/fzf-tab.zsh"
+# source plugins end
+
+# Set up fzf-tab & completion style
 zstyle ':completion:*' format '[%d]'
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 # disable sort
@@ -40,10 +71,8 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-min-height 100
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-source ~/.zsh-snap/znap.zsh
-
-znap eval starship 'starship init zsh --print-full-init'
-znap prompt
+# Initialize Starship prompt
+eval "$(starship init zsh --print-full-init)"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -60,15 +89,8 @@ setopt hist_find_no_dups
 
 source ~/.aliases
 
-# Load plugins
-znap source zsh-users/zsh-syntax-highlighting
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-completions
-# znap source marlonrichert/zsh-autocomplete
-znap source Aloxaf/fzf-tab
-
 # zoxide
-znap eval zoxide "zoxide init zsh"
+eval "$(zoxide init zsh)"
 # zoxide end
 
 # fnm
@@ -83,10 +105,10 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # Load Angular CLI autocompletion.
-#source <(ng completion script)
+# source <(ng completion script)
 
 # Load Docker CLI autocompletion.
-#znap eval docker_completion "docker completion zsh"
+# eval "$(docker completion zsh)"
 
 if grep -q "microsoft" /proc/version >/dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
@@ -105,6 +127,9 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 source ~/.asdf/plugins/golang/set-env.zsh
 # asdf end
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
