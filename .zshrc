@@ -33,7 +33,7 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview 'git show --color=always $
 zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word'
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 # Set fzf-preview for all other completions
-zstyle ':fzf-tab:complete:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || [ -f "$realpath" ] && bat --style=plain --color=always "$realpath"'
+zstyle ':fzf-tab:complete:*' fzf-preview '[ -d "$realpath" ] && exa -1 --color=always "$realpath" || ([ -f "$realpath" ] && bat --style=plain --color=always "$realpath")'
 
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
