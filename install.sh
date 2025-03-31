@@ -49,7 +49,7 @@ yes | ~/.fzf/install
 # Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 mkdir -p ~/.config
-cat $HOME/.dotfiles/starship.toml >~/.config/starship.toml
+ln $HOME/.dotfiles/starship.toml ~/.config/starship.toml
 
 # SDKMan
 curl -s "https://get.sdkman.io" | bash
