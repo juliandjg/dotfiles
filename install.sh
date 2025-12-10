@@ -26,6 +26,8 @@ elif [[ "$OS" == "macos" ]]; then
     # Install Homebrew if not present
     if ! command -v brew &> /dev/null; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo >> ~/.zprofile
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
     fi
 
     brew update
@@ -116,5 +118,6 @@ fi
 # Change to ZSH
 if [[ "$OS" == "linux" ]]; then
     chsh -s /usr/bin/zsh
-    zsh
 fi
+
+zsh
