@@ -2,6 +2,7 @@ ZSH_ADDONS_DIR="$HOME/.zsh-addons"
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
+
 clone_if_not_exists() {
     local repo_url=$1
     local dest_dir=$2
