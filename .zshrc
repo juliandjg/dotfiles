@@ -1,5 +1,7 @@
 ZSH_ADDONS_DIR="$HOME/.zsh-addons"
 
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 clone_if_not_exists() {
     local repo_url=$1
     local dest_dir=$2
@@ -132,6 +134,3 @@ source ~/.asdf/plugins/golang/set-env.zsh
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compinit && compinit
