@@ -112,7 +112,7 @@ export PATH="$PNPM_HOME:$PATH"
 # source <(ng completion script)
 
 # Load Docker CLI autocompletion.
-# eval "$(docker completion zsh)"
+eval "$(docker completion zsh)"
 
 if grep -q "microsoft" /proc/version >/dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
@@ -135,3 +135,6 @@ source ~/.asdf/plugins/golang/set-env.zsh
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
